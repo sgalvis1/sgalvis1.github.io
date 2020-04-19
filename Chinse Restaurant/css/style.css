@@ -1,0 +1,212 @@
+body {
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Images */
+#Logo-Brand {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  margin: 0px 0px 0px 20px;
+}
+
+/* Texts */
+#Name-brand {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  margin: 0px;
+  line-height: 30px;
+}
+#Brand-Name-Welcome {
+  color: #307ea6;
+  font-weight: bold;
+  /* font-size: 50px; */
+}
+
+.tiles-texts {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: gray;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Sections */
+header #header-nav {
+  background-color: #307ea6;
+  /* position: -webkit-sticky;
+  position: sticky !important;
+  top: 0; */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+#Welcome-Section {
+  background-color: #fafbfd;
+  background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+  height: 90vh;
+  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-position: -100px -100px; */
+  
+  /* background-attachment: fixed; */
+  
+}
+
+#navbarNav a:hover {
+  font-weight: bold;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#navbarNav a {
+  opacity: 0.7;
+}
+
+#menu-tile,
+#specials-tile,
+#map-tile {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  /* border: 2px solid blue; */
+  overflow: hidden;
+  transition-duration: 0.7s;
+}
+
+#menu-tile:hover,
+#specials-tile:hover,
+#map-tile:hover {
+  box-shadow: 0px 1px 10px 2px gray;
+  transition-duration: 0.5s;
+}
+
+/* .tiles{
+  transition: all 1s ease-out;
+}
+.tiles:hover{
+  transform: translatey(-7px);
+  transition-duration: 1s;
+} */
+
+#menu-tile {
+  background-image: url(../img/food-photography-of-ramen-noodle-2133989.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#specials-tile {
+  background-image: url(../img/herbs-906140_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Icons  */
+.custom-toggler.navbar-toggler:focus {
+  border: 0px solid white;
+  border-radius: 10px;
+  outline: white;
+}
+
+.custom-toggler.navbar-toggler {
+  border: 0px solid white;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+.custom-toggler.navbar-toggler:hover {
+  border: 0px solid white;
+  border-radius: 10px;
+  opacity: 1;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* Media Queris */
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  #Welcome-Section {
+    background-color: #fafbfd;
+    background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+    height: 60vh;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -0px 0px;
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #Welcome-Section {
+    background-color: #fafbfd;
+    background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+    height: 60vh;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -70px;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* #Welcome-Section {
+        background-color: #fafbfd;
+        background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+        height: 70vh;
+        width: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: -90px -40px;
+      } */
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* #Welcome-Section {
+        background-color: #fafbfd;
+        background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+        height: 90vh;
+        width: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: -140px -300px;
+      } */
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* #Welcome-Section {
+        background-color: #fafbfd;
+        background-image: url(../img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg);
+        height: 90vh;
+        width: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: -0px -200px;
+      } */
+}
