@@ -41,7 +41,35 @@ body {
   opacity: 0.8;
 }
 
+.footer-text2{
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.row > section{
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.row > section > span{
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#Testimonials{
+  font-style: italic;
+}
 /* Sections */
+
+.card-footer{
+  background-color: #307ea6;
+  color: white;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 header #header-nav {
   background-color: #307ea6;
   /* position: -webkit-sticky;
@@ -156,6 +184,9 @@ header #header-nav {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: -0px 0px;
+  }
+  .card-footer section{
+    text-align: center;
   }
 }
 
