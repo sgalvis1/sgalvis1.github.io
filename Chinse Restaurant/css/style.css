@@ -61,6 +61,26 @@ body {
   font-style: italic;
 }
 /* Sections */
+.category-tile{
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+
+.category-tile span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: gray;
+  opacity: 0.8;
+  color: white;
+
+}
 
 .card-footer{
   background-color: #307ea6;
@@ -75,7 +95,7 @@ header #header-nav {
   /* position: -webkit-sticky;
   position: sticky !important;
   top: 0; */
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -120,7 +140,8 @@ header #header-nav {
 
 #menu-tile:hover,
 #specials-tile:hover,
-#map-tile:hover {
+#map-tile:hover,
+.category-tile:hover{
   box-shadow: 0px 1px 10px 2px gray;
   transition-duration: 0.5s;
 }
