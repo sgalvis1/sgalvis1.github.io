@@ -5,6 +5,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+hr {
+  /* border-top: 0.5px solid white; */
+  /* border-top: 0.5px solid rgba(0,0,0,.1); */
+}
+
 /* Images */
 #Logo-Brand {
   height: 30px;
@@ -14,6 +19,26 @@ body {
 }
 
 /* Texts */
+.menu-item-details{
+  font-size: 0.9em;
+  font-style: italic;
+  padding-left: 5px;
+}
+.menu-item-price span {
+  font-size: 0.8em;
+}
+
+.menu-item-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  /* text-align: center; */
+}
+
+.menu-item-price {
+  font-size: 1em;
+  text-align: center;
+}
+
 #Name-brand {
   color: white;
   font-size: 40px;
@@ -41,54 +66,63 @@ body {
   opacity: 0.8;
 }
 
-.footer-text2{
+.footer-text2 {
   font-size: 0.9em;
   font-style: italic;
 }
 
-.row > section{
+.row > section {
   font-size: 0.9em;
   margin-bottom: 5px;
 }
-.row > section > span{
+.row > section > span {
   font-size: 1.2em;
   font-weight: bold;
   letter-spacing: 5px;
   width: 100%;
   box-sizing: border-box;
 }
-#Testimonials{
+#Testimonials {
   font-style: italic;
 }
 
 /* Sections */
-.menu-item-photo{
+
+.menu-item-photo {
   position: relative;
+  max-width: 250px;
+  padding: 0px;
+  /* overflow: hidden; */
 }
 
-.menu-item-photo div{
+.menu-item-photo div {
   position: absolute;
   border: 0px solid white;
-  border-radius: 500px;
-  right: -20px;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  right: -15px;
   bottom: 0;
-  background-color: gray;
+  background-color: #307ea6;
   color: white;
   opacity: 1;
   font-weight: bold;
-  padding: 5px;
-  font-size: 15px;
-
+  padding: 2px;
+  font-size: 0.8em;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-sizing: content-box;
 }
 
-.category-tile{
+.category-tile {
   position: relative;
   overflow: hidden;
   width: 200px;
   height: 200px;
 }
 
-.category-tile span{
+.category-tile span {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -99,10 +133,9 @@ body {
   background-color: gray;
   opacity: 0.8;
   color: white;
-
 }
 
-.card-footer{
+.card-footer {
   background-color: #307ea6;
   color: white;
   margin-top: 20px;
@@ -131,12 +164,11 @@ header #header-nav {
   background-repeat: no-repeat;
   background-position: center;
   /* background-position: -100px -100px; */
-  
+
   /* background-attachment: fixed; */
-  
 }
 
-.current-selection{
+.current-selection {
   font-weight: bolder;
   opacity: 1 !important;
   cursor: pointer;
@@ -169,7 +201,7 @@ header #header-nav {
 #menu-tile:hover,
 #specials-tile:hover,
 #map-tile:hover,
-.category-tile:hover{
+.category-tile:hover {
   box-shadow: 0px 1px 10px 2px gray;
   transition-duration: 0.5s;
 }
@@ -234,7 +266,7 @@ header #header-nav {
     background-repeat: no-repeat;
     background-position: -0px 0px;
   }
-  .card-footer section{
+  .card-footer section {
     text-align: center;
   }
 }
@@ -263,6 +295,9 @@ header #header-nav {
         background-repeat: no-repeat;
         background-position: -90px -40px;
       } */
+  .menu-item-photo-container {
+    padding: 0px;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -276,6 +311,9 @@ header #header-nav {
         background-repeat: no-repeat;
         background-position: -140px -300px;
       } */
+  .menu-item-photo-container {
+    padding: 0px;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -289,4 +327,8 @@ header #header-nav {
         background-repeat: no-repeat;
         background-position: -0px -200px;
       } */
+
+  .menu-item-photo-container {
+    padding: 0px;
+  }
 }
