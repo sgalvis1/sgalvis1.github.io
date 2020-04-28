@@ -1,0 +1,23 @@
+body{
+    font-size: 1em;
+}
+
+.box{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.box-container{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 250px;
+}
+.btn{
+    margin: 5px;
+    width: 150px;
+}
+
+.InputNumber{
+    width: 50px;
+    text-align: center;
+}
