@@ -21,3 +21,12 @@ body{
     width: 50px;
     text-align: center;
 }
+.sfunc{
+    font-weight: bold;
+}
+.sthanks{
+    font-weight: bold;
+    font-size: 1.5em;
+    /* letter-spacing: 0.2em; */
+    line-height: 70px;
+}

@@ -21,60 +21,126 @@
   <body>
     <div class="container">
       <h1 class="text-center text-primary">JavaScript Module</h1>
+      <!-- Section row  -->
       <div class="row">
-        <!-- Loop Function   -->
-        <div class="col-12 col-md-6 box">
-          <div class="box-container text-center">
-            <h3 class="text-center text-info">Loop Function</h3>
-            <p id="Description">
-              Enter two number in order to obtain the adition beetween them
-            </p>
-            <p id="demo" class="text-center"></p>
-
-            <input type="number" value="1" id="N1" class="InputNumber" />
-            <input type="number" value="10" id="N2" class="InputNumber" />
-            <br />
+        <div class="col-12">
+          <!-- tabs section -->
+          <div class="nav nav-pills nav-fill" id="nav-tab" role="tablist">
             <a
-              name=""
-              id=""
-              class="btn btn-primary"
-              href="#"
-              onclick="loop(1,10)"
-              role="button"
-              class="btn"
+              class="nav-item nav-link active"
+              id="nav-home-tab"
+              data-toggle="pill"
+              href="#nav-home"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+              >Home</a
             >
-              Run
-            </a>
+            <a
+              class="nav-item nav-link"
+              id="nav-tab-2"
+              href="#tab-2"
+              data-toggle="pill"
+              role="tab"
+              aria-controls="tab-2"
+              aria-selected="false"
+              >Function 1</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-tab-2"
+              href="#tab-3"
+              data-toggle="pill"
+              role="tab"
+              aria-controls="tab-3"
+              aria-selected="false"
+              >Function 2</a
+            >
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          </div>
+          <!-- Tabs content section  -->
+          <div class="tab-content mt-4 mx-auto" id="nav-tabContent">
+            <!-- tab 1 Welcome Tab  -->
+            <div
+              class=" col-12 tab-pane fade show active text-center"
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+            <h4 class="text-center text-info"> Welcome to the function page </h4>
+             <p class="">Please select a function tab in order to run it. 
+              The functions aim to :
+               <br><span class="sfunc"> Function 1 : </span>  Find the sum of consecutive numbers
+                <br><span class="sfunc"> Function 1 : </span> Find the higher number between 2 numbers
+              <br><span class="sthanks text-success"> Thanks for use our web site </span>  </p>
+            </div>
+            <!-- tab 2 Function 1  -->
+            <div
+              class="col-12 col-md-8 tab-pane fade show mx-auto"
+              id="tab-2"
+              role="tabpanel"
+              aria-labelledby="nav-tab-2"
+            >
+              <div class="box-container text-center">
+                <h3 class="text-center text-info">Loop Function</h3>
+                <p id="Description">
+                  Enter two numbers in order to obtain the consecutive sum beetween them
+                </p>
+                <p id="demo" class="text-center"></p>
+
+                <input type="number" value="1" id="N1" class="InputNumber" />
+                <input type="number" value="10" id="N2" class="InputNumber" />
+                <br />
+                <a
+                  name=""
+                  id=""
+                  class="btn btn-primary"
+                  href="#"
+                  onclick="loop(1,10)"
+                  role="button"
+                  class="btn"
+                >
+                  Run
+                </a>
+              </div>
+            </div>
+            <!-- tab 3  Function 2 -->
+            <div
+              class=" col-12 col-md-8 tab-pane fade show mx-auto"
+              id="tab-3"
+              role="tabpanel"
+              aria-labelledby="nav-tab-3"
+            >
+              <div class="box-container text-center">
+                <h3 class="text-center text-info">Test Number Function</h3>
+                <p id="Description">
+                  Enter two numbers to compare it
+                </p>
+                <br class="d-none d-md-block d-lg-none" />
+                <p id="TestNumberResult" class="text-center"></p>
+                <input type="number" value="1" id="N3" class="InputNumber" />
+                <input type="number" value="10" id="N4" class="InputNumber" />
+                <br />
+                <a
+                  name=""
+                  id=""
+                  class="btn btn-primary"
+                  href="#"
+                  onclick="TestNumbers(1,10)"
+                  role="button"
+                  class="btn"
+                >
+                  Run
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
-
-        <!-- Test Numbers Function   -->
-        <div class="col-12 col-md-6 box">
-          <div class="box-container text-center">
-            <h3 class="text-center text-info">Test Number Function</h3>
-            <p id="Description">
-              Enter two numbers to compare it
-            </p>
-            <br class="d-none d-md-block d-lg-none">
-            <p id="TestNumberResult" class="text-center"></p>
-            <input type="number" value="1" id="N3" class="InputNumber" />
-            <input type="number" value="10" id="N4" class="InputNumber" />
-            <br/>
-            <a
-              name=""
-              id=""
-              class="btn btn-primary"
-              href="#"
-              onclick="TestNumbers(1,10)"
-              role="button"
-              class="btn"
-            >
-              Run
-            </a>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Functions Section : Back up in the function.html  -->
+
     </div>
 
     <!-- Optional JavaScript -->
