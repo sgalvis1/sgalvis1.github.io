@@ -1,7 +1,7 @@
 // Event is rising when the entire files are loaded 
-document.addEventListener("DOMContentLoaded", function(event){
-    alert("Document Loaded")
-});
+// document.addEventListener("DOMContentLoaded", function(event){
+//     alert("Document Loaded")
+// });
 
 var bton = document.getElementById("btn");
 bton.addEventListener("click",sayIt);
@@ -37,4 +37,25 @@ function sayIt() {
         
     }
 }
- 
+
+// Onmousemove Event
+var screenLog = document.querySelector('#square');
+screenLog.addEventListener('mousemove', logKey);
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  };
+
+function logKey(e) {
+    // var map = (0,0, 10, -50, 50);
+    var xmap = scale(e.screenX,398,728,0,255);
+    var ymap = scale(e.screenY,177,373,0,255);
+//   screenLog.innerText = `
+//     Screen X/Y: ${e.screenX}, ${e.screenY}
+//     Client X/Y: ${e.clientX}, ${e.clientY}
+//     Map X/Y: ${xmap}, ${ymap}`;
+    square.style.backgroundColor = `rgb(${xmap},${ymap}, ${xmap})`;
+    
+    
+}
+
