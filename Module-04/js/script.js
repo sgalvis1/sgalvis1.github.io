@@ -13,6 +13,10 @@ var facebook = {
     "sotck of company": 110
 };
 
+facebook.speak = function () {
+    console.log("Faceboob Speak" + this.name);
+};
+
 // Objects : New Object approch
 var company = new Object();
 company.name = "Facebook";
@@ -60,8 +64,25 @@ function TestNumbers(xx, yy) {
 }
 // TestNumbers("2",3);
 
-// foor loop function 
+//Workers
+
+var myWorker = new Worker('js/worker.js');
+//myWorker.postMessage([2, 10]); // Call de webworker
+myWorker.addEventListener('message', function (e) {
+    console.log("I finished my work, boss");
+    document.getElementById("demo").innerHTML = "Result : " + e.data;
+});
+
+// Foor loop webworker
 function loop(xx, yy) {
+    var x = Number(document.getElementById("N1").value) || xx;
+    var y = Number(document.getElementById("N2").value) || yy;
+    myWorker.postMessage([x, y]);
+    console.log("Hello Worker");
+}
+
+// foor loop function 
+function loop2(xx, yy) {
     var x = Number(document.getElementById("N1").value) || xx;
     var y = Number(document.getElementById("N2").value) || yy;
     // console.log("Test Numbers: " + x + y);
@@ -70,9 +91,10 @@ function loop(xx, yy) {
         sum = sum + i;
     }
     document.getElementById("demo").innerHTML = "Result : " + sum;
-    // console.log(sum);
     return sum;
+    // console.log(sum);
 }
+
 // console.log(loop(1,10));
 
 // Handling Default Values 
@@ -212,7 +234,7 @@ for (var obj in facebook) {
 
 // Inmmediately Invoked Function Expression (IIFEs)
 // Passing a inside IIFEs object to global context
-(function (window,name) {
+(function (window, name) {
     var f1Object = {};
     f1Object.name = "Juan";
     var message = "(This is the IIFEs 1) ";
@@ -220,7 +242,7 @@ for (var obj in facebook) {
         console.log("IIFEs Function : " + message + f1Object.name);
     };
     window.f1Object = f1Object;
-})(window,"Hello");
+})(window, "Hello");
 // The elments inside this object are not visible in the global contexte
 (function (name) {
     var f2Object = {};
