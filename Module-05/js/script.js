@@ -41,19 +41,20 @@ function sayIt() {
 // Onmousemove Event
 var screenLog = document.querySelector('#square');
 screenLog.addEventListener('mousemove', logKey);
+var pos = {};
 
 // Map values
 const scale = (num, in_min, in_max, out_min, out_max) => {
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 };
 
-var test = (msg)=>{
-    console.log(msg);
-}
+var test = (msg) => console.log(msg);
+
 
 // Change color Function
 function logKey(e) {
     // var map = (0,0, 10, -50, 50);
+    var outElement = {};
     let rect = e.target.getBoundingClientRect();
 
     let xA = e.clientX - rect.x;
@@ -61,10 +62,11 @@ function logKey(e) {
     var xmap = scale(e.clientX, rect.left, rect.right, 0, 255);
     var ymap = scale(e.clientY, rect.top, rect.bottom, 0, 255);
 
+    
 
     screenLog.style.backgroundColor = `rgb(${xmap},${ymap}, 100)`;
     screenLog.style.borderColor = `rgb(${xmap},${ymap}, 100)`;
-    
+
     if (e.shiftKey === true) {
         screenLog.innerText = `
             Screen X/Y: ${e.screenX}, ${e.screenY}
@@ -73,6 +75,10 @@ function logKey(e) {
             Map X/Y: ${xmap}, ${ymap}`;
         // console.log(e.target);
     }
+
+    outElement.Position = [xA,yA]; 
+    window.pos = outElement; // Post a local variable to the global env
+    // return outElement;
 }
 
 document.querySelector("body").addEventListener("mousemove", function (event) {
