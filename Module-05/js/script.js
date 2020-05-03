@@ -40,7 +40,7 @@ function sayIt() {
 
 // Onmousemove Event
 var screenLog = document.querySelector('#square');
-// screenLog.addEventListener('mousemove', logKey);
+screenLog.addEventListener('mousemove', logKey);
 screenLog.addEventListener('touchmove', squarecolor);
 var pos = {};
 
