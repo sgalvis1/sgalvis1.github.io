@@ -101,3 +101,24 @@ document.querySelector("body").addEventListener("mousemove", function (event) {
         console.log("x: " + event.clientX + " y: " + event.clientY);
     };
 });
+
+//AJAX request
+document.addEventListener("DOMContentLoaded", function(event){
+    //     alert("Document Loaded")
+    document.querySelector("#ajaxBtn").addEventListener("click",function(){
+        var self = this;
+        var name = "";
+
+        console.log("button")
+
+        $ajaxUtils.sendGetRequest("/Data/names.txt",
+            function(request){
+                self.name = request.responseText;
+                console.log(self.name);
+                document.querySelector("#nameContent").innerText = self.name;
+            });
+    
+            
+    });
+});
+    

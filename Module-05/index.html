@@ -1,42 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Module 05</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <!-- Optinional CSS  -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
   <body>
     <div class="container">
-        <h1 class="text-center mx-auto mt-5" id="title">Module 5 JavaScript</h1>
-        <div class="row">
-            <div class="col-6 mb-2 mt-2 mx-auto">
-                <p class="text-center">
-                    Say Hello to 
-                    <input type="text" id="name">
-                    <button type="button" name="" id="btn" class="btn btn-primary mt-2">Say it</button>
-                </p>
-            </div>
+      <h1 class="text-center mx-auto mt-5" id="title">Module 5 JavaScript</h1>
+      <!-- JS Function  -->
+      <div class="row">
+        <div class="col-12">
+          <h2> JS Function </h2>
         </div>
-        <div class="row">
-          <div class="col-12">
+        <div class="col-6 mb-2 mt-2 mx-auto">
+          <p class="text-center">
+            Say Hello to
+            <input type="text" id="name" />
+            <button type="button" name="" id="btn" class="btn btn-primary mt-2">
+              Say it
+            </button>
             <div id="output"></div>
-            <div id="square"> </div>
+          </p>
         </div>
+      </div>
+      <!-- Change Color Function  -->
+      <div class="row">
+        <div class="col-12">
+          <h2> Color Function Section </h2>
+          <div id="square"></div>
         </div>
+      </div>
+      <!-- AJAX Request  -->
+      <div class="row">
+        <div class="col-12">
+          <h2> AJAX Request </h2>
+        </div>
+        <div class="col-6 mb- mt-2 mx-auto">
+          <p class="text-center">
+            AJAX Say Hello to : 
+            <p  id="nameContent"> </p>
+            <button type="button" name="" id="ajaxBtn" class="btn btn-primary mt-2">
+              Say it
+            </button>
+          </p>
+        </div>
+      </div>
     </div>
-    
-      
+
     <!-- Optional JavaScript -->
     <script src="js/script.js"></script>
+    <script src="js/ajax-utils.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
