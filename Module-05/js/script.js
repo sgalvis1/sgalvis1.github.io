@@ -40,8 +40,10 @@ function sayIt() {
 
 // Onmousemove Event
 var screenLog = document.querySelector('#square');
-// screenLog.addEventListener('mousemove', logKey);
+screenLog.addEventListener('mousemove', logKey);
 screenLog.addEventListener('touchmove', squarecolor);
+var el = document.getElementById("square");
+var ctx = el.getContext("2d");
 
 var pos = {};
 
@@ -53,10 +55,14 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 var test = (msg) => console.log(msg);
 
 
+//Change Color Touch function 
 function squarecolor(e) {
     let rect = e.target.getBoundingClientRect();
-    screenLog.innerText = `
-            Screen X/Y: ${e.touches[0].clientX}, ${e.touches[0].clientY}`;
+    // ctx.lineWidth = 4;
+    // ctx.strokeStyle = "#fffffff";
+    // ctx.stroke();
+    // screenLog.innerText = `
+    //         Screen X/Y: ${e.touches[0].clientX}, ${e.touches[0].clientY}`;
 
     let xA = e.clientX - rect.x;
     let yA = e.clientY - rect.y;
@@ -66,7 +72,7 @@ function squarecolor(e) {
     screenLog.style.backgroundColor = `rgb(${xmap},${ymap}, 100)`;
     screenLog.style.borderColor = `rgb(${xmap},${ymap}, 100)`;
 }
-// Change color Function
+// On hover Change color Function
 function logKey(e) {
     // var map = (0,0, 10, -50, 50);
     var outElement = {};
