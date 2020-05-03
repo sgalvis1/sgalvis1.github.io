@@ -55,6 +55,8 @@ var test = (msg) => console.log(msg);
 
 function squarecolor(e) {
     let rect = e.target.getBoundingClientRect();
+    screenLog.innerText = `
+            Screen X/Y: ${e.touches[0].clientX}, ${e.touches[0].clientY}`;
 
     let xA = e.clientX - rect.x;
     let yA = e.clientY - rect.y;
