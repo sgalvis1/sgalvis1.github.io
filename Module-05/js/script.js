@@ -42,9 +42,6 @@ function sayIt() {
 var screenLog = document.querySelector('#square');
 screenLog.addEventListener('mousemove', logKey);
 screenLog.addEventListener('touchmove', squarecolor);
-var el = document.getElementById("square");
-var ctx = el.getContext("2d");
-
 var pos = {};
 
 // Map values
@@ -58,11 +55,6 @@ var test = (msg) => console.log(msg);
 //Change Color Touch function 
 function squarecolor(e) {
     let rect = e.target.getBoundingClientRect();
-    // ctx.lineWidth = 4;
-    // ctx.strokeStyle = "#fffffff";
-    // ctx.stroke();
-    // screenLog.innerText = `
-    //         Screen X/Y: ${e.touches[0].clientX}, ${e.touches[0].clientY}`;
 
     let xA = e.clientX - rect.x;
     let yA = e.clientY - rect.y;
