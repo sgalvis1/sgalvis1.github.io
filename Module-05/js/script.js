@@ -41,6 +41,8 @@ function sayIt() {
 // Onmousemove Event
 var screenLog = document.querySelector('#square');
 screenLog.addEventListener('mousemove', logKey);
+screenLog.addEventListener('touchmove', squarecolor);
+
 var pos = {};
 
 // Map values
@@ -51,6 +53,17 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 var test = (msg) => console.log(msg);
 
 
+function squarecolor(e) {
+    let rect = e.target.getBoundingClientRect();
+
+    let xA = e.clientX - rect.x;
+    let yA = e.clientY - rect.y;
+    var xmap = scale(e.touches[0].clientX, rect.left, rect.right, 0, 255);
+    var ymap = scale(e.touches[0].clientY, rect.top, rect.bottom, 0, 255);
+
+    screenLog.style.backgroundColor = `rgb(${xmap},${ymap}, 100)`;
+    screenLog.style.borderColor = `rgb(${xmap},${ymap}, 100)`;
+}
 // Change color Function
 function logKey(e) {
     // var map = (0,0, 10, -50, 50);
@@ -62,7 +75,7 @@ function logKey(e) {
     var xmap = scale(e.clientX, rect.left, rect.right, 0, 255);
     var ymap = scale(e.clientY, rect.top, rect.bottom, 0, 255);
 
-    
+
 
     screenLog.style.backgroundColor = `rgb(${xmap},${ymap}, 100)`;
     screenLog.style.borderColor = `rgb(${xmap},${ymap}, 100)`;
@@ -76,7 +89,7 @@ function logKey(e) {
         // console.log(e.target);
     }
 
-    outElement.Position = [xA,yA]; 
+    outElement.Position = [xA, yA];
     window.pos = outElement; // Post a local variable to the global env
     // return outElement;
 }
