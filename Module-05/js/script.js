@@ -102,23 +102,44 @@ document.querySelector("body").addEventListener("mousemove", function (event) {
     };
 });
 
-//AJAX request
-document.addEventListener("DOMContentLoaded", function(event){
+//AJAX request for a txt file
+// document.addEventListener("DOMContentLoaded", function (event) {
+//     //     alert("Document Loaded")
+//     document.querySelector("#ajaxBtn").addEventListener("click", function () {
+//         var self = this;
+//         var name = "";
+
+//         console.log("button")
+
+//         $ajaxUtils.sendGetRequest("/Data/names.txt",
+//             function (request) {
+//                 self.name = request.responseText;
+//                 console.log(self.name);
+//                 document.querySelector("#nameContent").innerText = self.name;
+//             });
+
+
+//     });
+// });
+
+//AJAX request for a JSON File
+document.addEventListener("DOMContentLoaded", function (event) {
     //     alert("Document Loaded")
-    document.querySelector("#ajaxBtn").addEventListener("click",function(){
+    document.querySelector("#ajaxBtn").addEventListener("click", function () {
         var self = this;
         var name = "";
 
         console.log("button")
 
-        $ajaxUtils.sendGetRequest("/Data/names.txt",
-            function(request){
-                self.name = request.responseText;
-                console.log(self.name);
-                document.querySelector("#nameContent").innerText = self.name;
+        $ajaxUtils.sendGetRequest("/Data/names2.json",
+            function (res) {
+                document.querySelector("#nameContent").innerText =
+                `First Name: ${res.User2.firstName}
+                Second Name: ${res.secondName}
+                Age: ${res.age}
+                E-mail ${res.mail}`;
             });
-    
-            
+
+
     });
 });
-    

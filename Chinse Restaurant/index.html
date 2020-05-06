@@ -19,7 +19,8 @@
     />
     <!-- Own Style  -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="effect.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
     <!-- Fonts  -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
@@ -31,23 +32,35 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <!-- Navigation bar -->
-    <header>
-      <nav id="header-nav" class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-          <!-- Logo Brand  -->
-          <a class="navbar-brand" href="index.html">
-            <!-- <img
+  <body id="" onload="showLoader();">
+    <!-- Loader  -->
+    <div id="myLoader" class="loader"></div>
+    <!-- <div id="myLoader" class="loader2">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <div class="bar4"></div>
+      <div class="bar5"></div>
+      <div class="bar6"></div>
+    </div> -->
+
+    <div id="bodyContent">
+      <!-- Navigation bar -->
+      <header>
+        <nav id="header-nav" class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <!-- Logo Brand  -->
+            <a class="navbar-brand" href="index.html">
+              <!-- <img
             src="img/Picture1.png"
             id="Logo-Brand"
             class="d-inline-block align-middle"
           /> -->
-            <p class="d-inline-block align-middle" id="Name-brand">
-              YÜ
-              <br />
+              <p class="d-inline-block align-middle" id="Name-brand">
+                YÜ
+                <br />
 
-              <!-- <svg
+                <!-- <svg
               class="bi bi-phone"
               width="0.7em"
               height="0.7em"
@@ -67,71 +80,75 @@
               />
             </svg>
             <span style="font-size: 20px;">60 58 14 77</span> -->
-            </p>
-          </a>
+              </p>
+            </a>
 
-          <!-- Button Collapse Navbar  -->
-          <button
-            class="navbar-toggler custom-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="true"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Navbar Options  -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto text-white">
-              <div class="border-top my-3"></div>
-              <li class="nav-item">
-                <a class="nav-link text-white text-center current-selection" href="index.html">
-                  <ion-icon name="home"></ion-icon>
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-center" href="menu.html">
-                  <ion-icon name="restaurant"></ion-icon>
-                  <span class="sr-only current-section">(current)</span> Menu
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-center" href="#">
-                  <ion-icon name="call"></ion-icon> Contact
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-center" href="index.html">
-                  <ion-icon name="information-circle"></ion-icon> About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-center" href="#">
-                  <ion-icon name="trophy"></ion-icon> Awards
-                </a>
-              </li>
-            </ul>
+            <!-- Button Collapse Navbar  -->
+            <button
+              id="navBarToggle"
+              class="navbar-toggler custom-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="true"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Options  -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="nav navbar-nav ml-auto text-white">
+                <div class="border-top my-3"></div>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-white text-center current-selection"
+                    href="index.html"
+                  >
+                    <ion-icon name="home"></ion-icon>
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white text-center" href="menu.html">
+                    <ion-icon name="restaurant"></ion-icon>
+                    <span class="sr-only current-section">(current)</span> Menu
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white text-center" href="#">
+                    <ion-icon name="call"></ion-icon> Contact
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white text-center" href="index.html">
+                    <ion-icon name="information-circle"></ion-icon> About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white text-center" href="#">
+                    <ion-icon name="trophy"></ion-icon> Awards
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- First Section : Welcome Section  -->
+      <div class="container-fluid img-fluid" id="Welcome-Section">
+        <div
+          style="height: 100%;"
+          class="d-flex align-items-end align-items-md-center"
+        >
+          <div class="col-md-4 offset-md-8 col-lg-4 offset-lg-8 col-sm-6">
+            <h1 class="text-center" id="Brand-Name-Welcome">YÜ Restaurant</h1>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <!-- First Section : Welcome Section  -->
-    <div class="container-fluid img-fluid" id="Welcome-Section">
-      <div
-        style="height: 100%;"
-        class="d-flex align-items-end align-items-md-center"
-      >
-        <div class="col-md-4 offset-md-8 col-lg-4 offset-lg-8 col-sm-6">
-          <h1 class="text-center" id="Brand-Name-Welcome">YÜ Restaurant</h1>
-        </div>
       </div>
-    </div>
 
-    <!-- <div class="container-fluid">
+      <!-- <div class="container-fluid">
      <div class="jumbotron jumbotron-fluid">
        <img src="img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg" class="img-fluid" alt="">
        <div class="container">
@@ -145,82 +162,86 @@
      </div>
    </div> -->
 
-   <!-- Tiles Section  -->
-    <div id="home-tiles" class="container">
-      <div class="my-4"></div>
-      <div class="row">
-        <div class="col-12 col-md-4 col-sm-6 tiles">
-          <a href="menu.html">
-            <div id="menu-tile">
-              <span class="tiles-texts"> menu </span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-4 col-sm-6">
-          <a href="#">
-            <div id="specials-tile">
-              <span class="tiles-texts"> specials </span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-4 col-sm-12">
-          <a href="https://goo.gl/maps/AdWSrSQcAfnYpy3C7" target="_blank">
-            <div id="map-tile" class="text-center">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10504.042632552946!2d2.70108743622477!3d48.83893539158945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e604b0b230d021%3A0x3c34e4b8f34923d1!2s4%20Rue%20Konrad%20Adenauer%2C%2077600%20Bussy-Saint-Georges!5e0!3m2!1sfr!2sfr!4v1586972346424!5m2!1sfr!2sfr"
-                width="100%"
-                height="250"
-                frameborder="0"
-                style="border: 0;"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"
-              ></iframe>
+      <!-- Tiles Section  -->
+      <div id="home-tiles" class="container">
+        <div class="my-4"></div>
+        <div class="row">
+          <div class="col-12 col-md-4 col-sm-6 tiles">
+            <a href="menu.html">
+              <div id="menu-tile">
+                <span class="tiles-texts"> menu </span>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 col-sm-6">
+            <a href="#">
+              <div id="specials-tile">
+                <span class="tiles-texts"> specials </span>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 col-sm-12">
+            <a href="https://goo.gl/maps/AdWSrSQcAfnYpy3C7" target="_blank">
+              <div id="map-tile" class="text-center">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10504.042632552946!2d2.70108743622477!3d48.83893539158945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e604b0b230d021%3A0x3c34e4b8f34923d1!2s4%20Rue%20Konrad%20Adenauer%2C%2077600%20Bussy-Saint-Georges!5e0!3m2!1sfr!2sfr!4v1586972346424!5m2!1sfr!2sfr"
+                  width="100%"
+                  height="250"
+                  frameborder="0"
+                  style="border: 0;"
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
 
-              <span class="tiles-texts"> map </span>
-            </div>
-          </a>
+                <span class="tiles-texts"> map </span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <footer class="card-footer" class="footer">
-      <div class="container">
-        <div class="row">
+      <!-- footer  -->
+      <footer class="card-footer" class="footer">
+        <div class="container">
+          <div class="row">
+            <section id="hours" class="col-sm-4">
+              <span>Hours: </span> <br />
+              Sun-Thurs: 11:00am 12:00pm <br />
+              Fri: 11:15am - 2:30pm <br />
+              Saturdat Closed
+              <hr class="d-block d-sm-none mt-1 mb-0" color="white" />
+            </section>
 
-          <section id="hours" class="col-sm-4">
-            <span>Hours: </span> <br>
-            Sun-Thurs: 11:00am 12:00pm <br>
-            Fri: 11:15am - 2:30pm <br>
-            Saturdat Closed
-            <hr class="d-block d-sm-none mt-1 mb-0" color="white">
-          </section>
+            <section id="adress" class="col-sm-4">
+              <span>Adress: </span> <br />
+              7, Rue Camille Guerin Lille-59000
+              <p class="footer-text2">
+                *Delivery area wihin 3-4 miles with minimum order of $20 plus $3
+                charge for all deliveries
+              </p>
+              <hr class="d-block d-sm-none mt-1 mb-0" color="white" />
+            </section>
 
-          <section id="adress" class="col-sm-4">
-            <span>Adress: </span> <br>
-            7, Rue Camille Guerin
-            Lille-59000
-            <p class="footer-text2">*Delivery area wihin 3-4 miles with minimum order of $20 plus $3 charge for all deliveries</p>
-            <hr class="d-block d-sm-none mt-1 mb-0" color="white">
-          </section>
-
-          <section id="Testimonials" class="col-sm-4">
-            <p>"The best chinese restaurant"</p>
-            <p>"The food was incredible, I really love it"</p>
-          </section>
+            <section id="Testimonials" class="col-sm-4">
+              <p>"The best chinese restaurant"</p>
+              <p>"The food was incredible, I really love it"</p>
+            </section>
           </div>
           <div class="text-center">&copy; Copyright YÜ</div>
         </div>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="js/script.js" type="text/JavaScript"></script>
+      </footer>
+    </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js" type="text/JavaScript"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
