@@ -55,9 +55,7 @@ body {
 }
 
 
-/* Preloud effect  */
-
-
+/* Preload effect  */
 .preloader {
   background-color: #3498db;
 }
@@ -65,13 +63,8 @@ body {
 #bodyContent{
   display: none;
 }
-
-hr {
-  /* border-top: 0.5px solid white; */
-  /* border-top: 0.5px solid rgba(0,0,0,.1); */
-}
-
-#myLoader{
+/* My loader Circular effect */
+.loader{
   position: absolute;
   left: 50%;
   top: 50%;

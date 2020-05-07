@@ -32,7 +32,7 @@
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
   z-index: 500;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .loader2 > div {
@@ -41,8 +41,8 @@
   display: inline-block;
   float: left;
   margin-left: 2px;
-  -webkit-animation: delay 0.8s infinite ease-in-out;
-          animation: delay 0.8s infinite ease-in-out;
+  -webkit-animation: delay 5s ease-in-out;
+          animation: delay 1s linear infinite;
 }
 
 .loader2 .bar1 {
