@@ -21,8 +21,8 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
 
     // Variables 
     var homeHtml = "snippets/home-snippets.html";
-    var allCategoriesURL = "http://davids-restaurant.herokuapp.com/categories.json";
-    // var allCategoriesURL = "/data.json";
+    //var allCategoriesURL = "http://davids-restaurant.herokuapp.com/categories.json";
+    var allCategoriesURL = "/data.json";
     var menuTileHTML = "snippets/menu-tile-snippet.html";
     var menuItemHTML = "snippets/menu-item-snippet.html";
 
