@@ -21,11 +21,26 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
 
     // Variables 
     var homeHtml = "snippets/home-snippets.html";
+    var allCategoriesURL = "http://davids-restaurant.herokuapp.com/categories.json";
+    // var allCategoriesURL = "/data.json";
+    var menuTileHTML = "snippets/menu-tile-snippet.html";
+    var menuItemHTML = "snippets/menu-item-snippet.html";
+
 
     // InnerHTML custom function 
     var insertHTML = function (selector, html) {
         var targetElem = $(selector);
         targetElem.html(html);
+    };
+
+    // Insert Property
+    // with propValue given in 'string'
+    var insertProperty = function (string, propName, propValue) {
+        var propToReplace = `{{ ${propName} }}`;
+        // Search for all string equal to propToReplace and replace them
+        // with the propValue 
+        string = string.replace(new RegExp(propToReplace, "g"), propValue);
+        return string;
     };
 
     // Show loading page
@@ -44,9 +59,74 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
             $("#main-content").html(responseText);
         }, false);
     });
+
+    // Load the menu categories view
+    yu.loadMenu = function () {
+        showLoading("#main-content");
+        // $ajaxUtils.sendGetRequest("data.json", AjaxTest);
+        $ajaxUtils.sendGetRequest(allCategoriesURL, buildShowMenu);
+    };
+
+    function AjaxTest(res) {
+        document.querySelector("#nameContent").innerText =
+            `First Name: ${res[0].name}`;
+    };
+
+    // Build and show the menu categories
+    function buildShowMenu(categories) {
+        // Load tile snippet of menu page 
+        $ajaxUtils.sendGetRequest(menuTileHTML, function (menuTileHTML) {
+            //Retrive single category snippet
+            $ajaxUtils.sendGetRequest(menuItemHTML, function (menuItemHTML) {
+                var menuViewHTML = buildMenu(categories, menuTileHTML, menuItemHTML);
+                insertHTML("#main-content", menuTileHTML);
+                insertHTML("#itemsContent",menuViewHTML);
+            },
+                false);
+
+        },
+            false);
+    }
+
+    // Build Menu Page
+    function buildMenu(items, menuTileHTML, menuItemHTML) {
+        // var finalHtml = menuTileHTML;
+        var finalHtml = "";
+        // finalHTML += "<section class='row'>";
+
+        //Loop over items
+        for (var i = 0; i < items.length; i++) {
+            //Insert item values
+            var html = menuItemHTML;
+            var name = ` ${items[i].name}`;
+            var short_name = items[i].short_name;
+
+            html = insertProperty(html,"name", name);
+            //html = insertProperty(html, "short_name", short_name);
+            finalHtml += html;
+        }
+        //finalHtml += "</div> </div>";
+        return finalHtml;
+    };
+
     global.$yu = yu;
 
+    // Ajax Text 
+    // document.querySelector("#ajaxBtn").addEventListener("click", function () {
+    //     var self = this;
+    //     var name = "";
+
+    //     console.log("button");
+    //     $ajaxUtils.sendGetRequest("data.json",
+    //         function (res) {
+    //             document.querySelector("#nameContent").innerText =
+    //                 `First Name: ${res[2].name}`;
+    //         });
+
+    // });
+
 })(window);
+
 
 
 function showLoader() {

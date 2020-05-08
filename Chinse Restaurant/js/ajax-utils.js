@@ -21,7 +21,7 @@
         };
         //Get and send the object to java engine
         request.open("GET", requestURL, true);
-        request.send("null");
+        request.send();
     };
 
     // Handle function

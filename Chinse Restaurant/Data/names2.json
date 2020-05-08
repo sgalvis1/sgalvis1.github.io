@@ -1,0 +1,20 @@
+{
+    "firstName": "Juan",
+    "secondName": "Galvis",
+    "age": 26,
+    "mail": "xxx@xxx.com",
+    "User1":
+        {
+        "firstName": "Juan2",
+        "secondName": "Galvis2",
+        "age": 26,
+        "mail": "xxx@xxx.com"
+    },
+    "User2" :
+            {
+        "firstName": "Juan2",
+        "secondName": "Galvis2",
+        "age": 26,
+        "mail": "xxx@xxx.com"
+    }
+}
