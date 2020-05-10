@@ -23,8 +23,11 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
     var homeHtml = "snippets/home-snippets.html";
     //var allCategoriesURL = "http://davids-restaurant.herokuapp.com/categories.json";
     var allCategoriesURL = "https://sgalvis1.github.io/Chinse%20Restaurant/data.json";
+    var cateogryItemsURL = "http://davids-restaurant.herokuapp.com/menu_items.json?category=";
     var menuTileHTML = "snippets/menu-tile-snippet.html";
     var menuItemHTML = "snippets/menu-item-snippet.html";
+    var categoriesTitleHTML = "snippets/categories-snippet.html";
+    var categoryItemHTML = "snippets/category-tile-snippet.html";
 
 
     // InnerHTML custom function 
@@ -60,11 +63,54 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
         }, false);
     });
 
+    // Load the single menu category
+    yu.LoadCategory = function (category) {
+        showLoading("main-content");
+        // Run the buildShowCategory Function with the JSON object
+        $ajaxUtils.sendGetRequest(cateogryItemsURL + category, buildShowCategory, true);
+
+    };
+
+    // Build and show the single menu category
+    function buildShowCategory(categoryMenuItems) {
+        // Load title snippet of cateogry items page 
+        $ajaxUtils.sendGetRequest(categoriesTitleHTML, function (categoriesTitleHTML) {
+            // Load the category Item Snippet
+            $ajaxUtils.sendGetRequest(categoryItemHTML, function (categoryItemHTML) {
+                // Build the category page
+                var cateogoryItemsViewHTML = buildCategoryView(categoryMenuItems, categoriesTitleHTML, categoryItemHTML);
+                //insertHTML("#main-content",cateogoryItemsViewHTML);
+            },
+                false);
+        },
+            false);
+    }
+    // Build the menu category page
+    function buildCategoryView(categoryMenuItems, categoriesTitleHTML, categoryItemHTML) {
+        categoriesTitleHTML = insertProperty(categoriesTitleHTML, "name", `${categoryMenuItems.category.name}`);
+        categoriesTitleHTML= insertProperty(categoriesTitleHTML, "special_instructions", categoryMenuItems.category.special_instructions);
+        insertHTML("#main-content", categoriesTitleHTML);
+        // var html = categoryItemHTML;
+        var finalHtml = "";
+        for (var i=0; i<categoryMenuItems.menu_items.length; i++){
+            var item = categoryMenuItems.menu_items[i];
+            var html = categoryItemHTML;
+            html = insertProperty(html,"short_name",item.short_name);
+            html = insertProperty(html,"price_small",item.price_small);
+            html = insertProperty(html,"price_large",item.price_large);
+            html = insertProperty(html,"name",item.name);
+            html = insertProperty(html,"short_description",item.description);
+            finalHtml += html;
+        }
+        insertHTML("#menu-item-content",finalHtml);
+    }
+
     // Load the menu categories view
     yu.loadMenu = function () {
         showLoading("#main-content");
         // $ajaxUtils.sendGetRequest("data.json", AjaxTest);
         $ajaxUtils.sendGetRequest(allCategoriesURL, buildShowMenu);
+        buttonActive();
     };
 
     function AjaxTest(res) {
@@ -80,7 +126,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
             $ajaxUtils.sendGetRequest(menuItemHTML, function (menuItemHTML) {
                 var menuViewHTML = buildMenu(categories, menuTileHTML, menuItemHTML);
                 insertHTML("#main-content", menuTileHTML);
-                insertHTML("#itemsContent",menuViewHTML);
+                insertHTML("#itemsContent", menuViewHTML);
             },
                 false);
 
@@ -98,16 +144,33 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
         for (var i = 0; i < items.length; i++) {
             //Insert item values
             var html = menuItemHTML;
-            var name = ` ${items[i].name}`;
-            var short_name = items[i].short_name;
+            var name = `${items[i].name}`;
+            var short_name = `${items[i].short_name}`;
 
-            html = insertProperty(html,"name", name);
-            //html = insertProperty(html, "short_name", short_name);
+            html = insertProperty(html, "name", name);
+            html = insertProperty(html, "short_name", short_name);
             finalHtml += html;
         }
         //finalHtml += "</div> </div>";
         return finalHtml;
-    };
+    }
+
+    // Buttons active function
+    function buttonActive(){
+        // Remove the active state
+        var classes = document.querySelector("#home-button").className;
+        classes = classes.replace(new RegExp("current-selection","g"),"");
+
+        document.querySelector("#home-button").className = classes;
+
+        // Add the active state 
+        classes =  document.querySelector("#menu-button").className;
+        if (classes.indexOf("active")==-1){
+            classes += " current-selection";
+            document.querySelector("#menu-button").className = classes;
+        }
+    }
+
 
     global.$yu = yu;
 

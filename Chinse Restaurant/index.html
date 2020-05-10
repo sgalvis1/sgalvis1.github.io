@@ -19,7 +19,7 @@
     />
     <!-- Own Style  -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="scss/effect.css">
+    <link rel="stylesheet" href="scss/effect.css" />
     <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
     <!-- Fonts  -->
     <link
@@ -32,10 +32,13 @@
       rel="stylesheet"
     />
     <!-- preload objects  -->
-    <link rel="preload" href="img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg" as="image">
+    <link
+      rel="preload"
+      href="img/foodiesfeed.com_stewed-chicken-with-three-cups-saue.jpg"
+      as="image"
+    />
   </head>
-  <body id="globalBody" >
-
+  <body id="globalBody">
     <!-- Loader  -->
     <!-- <div id="myLoader" class="loader"></div> -->
     <div id="myLoader" class="loader2">
@@ -106,6 +109,7 @@
                 <div class="border-top my-3"></div>
                 <li class="nav-item">
                   <a
+                    id="home-button"
                     class="nav-link text-white text-center current-selection"
                     href="index.html"
                   >
@@ -114,9 +118,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white text-center" href="#" onclick="$yu.loadMenu();">
-                    <ion-icon name="restaurant"></ion-icon>
-                    <span class="sr-only current-section">(current)</span> Menu
+                  <a
+                    class="nav-link text-white text-center"
+                    href="#"
+                    id="menu-button"
+                    onclick="$yu.loadMenu();"
+                  >
+                    <ion-icon name="restaurant"></ion-icon> Menu
                   </a>
                 </li>
                 <li class="nav-item">
@@ -140,7 +148,6 @@
         </nav>
       </header>
 
-
       <!-- Main content  -->
       <div id="main-content"></div>
 
@@ -159,7 +166,7 @@
           </p>
         </div>
       </div> -->
-    
+
       <!-- <a onclick="$yu.loadMenu();" name="" id="" class="btn btn-primary" href="#" role="button"></a> -->
       <!-- footer  -->
       <footer class="card-footer" class="footer">

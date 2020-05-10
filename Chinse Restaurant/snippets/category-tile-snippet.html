@@ -4,7 +4,7 @@
       <!-- Item Photo  -->
       <div class="col-sm-5 col-12 menu-item-photo-container">
         <div class="menu-item-photo mx-auto">
-          <div>D01</div>
+          <div>{{ short_name }}</div>
           <!-- Photo -->
           <img
             src="img/Plat 1.jpg"
@@ -16,17 +16,14 @@
         </div>
         <!-- Item Price -->
         <div class="menu-item-price mb-2">
-          $10.95 <span>(pint)</span> $14.95 <span>(quart)</span>
+          {{ price_small }} <span>(pint)</span> {{ price_large }} <span>(quart)</span>
         </div>
       </div>
       <!-- Item Decription -->
       <div class="col-12 col-sm-7 menu-item-description">
-        <h3 class="menu-item-title">Veal with Mixed Vegetables</h3>
+        <h3 class="menu-item-title">{{ name }}</h3>
         <p class="menu-item-details">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {{ short_description }}
         </p>
       </div>
     </div>
