@@ -21,9 +21,9 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded")
 
     // Variables 
     var homeHtml = "snippets/home-snippets.html";
-    var allCategoriesURL = "https://davids-restaurant.herokuapp.com/categories.json";
+    // var allCategoriesURL = "https://davids-restaurant.herokuapp.com/categories.json";
     // var allCategoriesURL = "https://sgalvis1.github.io/Chinse%20Restaurant/data.json";
-    var cateogryItemsURL = "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
+    // var cateogryItemsURL = "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
     var menuTileHTML = "snippets/menu-tile-snippet.html";
     var menuItemHTML = "snippets/menu-item-snippet.html";
     var categoriesTitleHTML = "snippets/categories-snippet.html";
