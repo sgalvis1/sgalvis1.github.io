@@ -129,12 +129,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var self = this;
         var name = "";
 
-        console.log("button")
+        console.log("button");
 
         $ajaxUtils.sendGetRequest("/Data/names2.json",
             function (res) {
                 document.querySelector("#nameContent").innerText =
-                    `First Name: ${res.User2.firstName}
+                `First Name: ${res.User2.firstName}
                 Second Name: ${res.secondName}
                 Age: ${res.age}
                 E-mail ${res.mail}`;
